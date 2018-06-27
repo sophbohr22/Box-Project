@@ -1,24 +1,57 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BoxProblem.Data;
-using BoxProblem.Services;
-using Microsoft.AspNetCore.Mvc;
 
-namespace BoxProblem.Controllers
-{
-    public class BoxController : Controller
-    {
-        private BoxService service; 
+        private BoxService service;
 
-            public BoxController (ApplicationDbContext context)
-            {
-                service = new BoxService(context); 
-            }
-        public IActionResult Index()
+        public BoxController(ApplicationDbContext context)
+        {
+            service = new BoxService(context);
+        }
+
+
+        // GET: Employees
+        public ActionResult Index()
+        {
+            return View(service.GetAllBoxes());
+        }
+
+        // GET: Employees/Create
+        public ActionResult Create()
         {
             return View();
+
+        // POST: Employees/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(BoxInventory box)
+        {
+            if (ModelState.IsValid)
+            {
+                service.AddBox(box);
+                return RedirectToAction("Index");
+            }
+
+            return View(box);
+        }
+
+
+       
+        public ActionResult Edit(int id)
+        {
+            BoxInventory box = service.GetBoxById(id);
+            return View(box);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(BoxInventory box)
+        {
+            if (ModelState.IsValid)
+            {
+                service.SaveEdits(box);
+                return RedirectToAction("Index");
+            }
+            return View(box);
         }
    
         public ActionResult Delete(int id)
@@ -26,5 +59,3 @@ namespace BoxProblem.Controllers
             BoxInventory box = service.GetBoxById(id);
             return View(box);
         }
-    }
-}
