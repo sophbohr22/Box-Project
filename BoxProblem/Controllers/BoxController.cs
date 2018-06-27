@@ -18,10 +18,35 @@ namespace BoxProblem.Controllers
         }
 
 
+        // GET: Employees
         public ActionResult Index()
+        {
+            return View(service.GetAllBoxes());
+        }
+
+        // GET: Employees/Create
+        public ActionResult Create()
         {
             return View();
         }
+
+        // POST: Employees/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(BoxInventory box)
+        {
+            if (ModelState.IsValid)
+            {
+                service.AddBox(box);
+                return RedirectToAction("Index");
+            }
+
+            return View(box);
+        }
+
+       
         public ActionResult Edit(int id)
         {
             BoxInventory box = service.GetBoxById(id);

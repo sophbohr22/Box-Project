@@ -13,4 +13,11 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Views\Box\Index.cs" />
+    <Compile Remove="Views\Box\index.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Box\EmptyCSSFile.css" />
+  </ItemGroup>
 </Project>
