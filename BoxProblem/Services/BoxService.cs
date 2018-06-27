@@ -22,7 +22,12 @@ namespace BoxProblem.Services
             return repository.GetAllBoxes();
         }
 
-        public void DeleteBox(Box toDelete)
+        public BoxInventory GetBoxById(int id)
+        {
+            return repository.GetBoxesById(id);
+        }
+
+        public void DeleteBox(BoxInventory toDelete)
         {
             repository.DeleteBox(toDelete);
         }

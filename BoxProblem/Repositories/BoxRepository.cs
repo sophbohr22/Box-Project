@@ -19,6 +19,10 @@ namespace BoxProblem.Repositories
         {
             return dbContext.Boxes.ToList();
         }
+        public BoxInventory GetBoxesById(int id)
+        {
+            return dbContext.Boxes.Find(id);
+        }
 
         public void DeleteBox(BoxInventory toDelete)
         {
