@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BoxProblem.Data;
 using Microsoft.EntityFrameworkCore;
+using BoxProblem.Repositories;
 
 namespace BoxProblem.Repositories
 {
@@ -35,6 +36,11 @@ namespace BoxProblem.Repositories
         public BoxInventory GetBoxById(int id)
         {
             return dbContext.Boxes.Find(id);
+        }
+        public void Delete(BoxInventory toDelete)
+        {
+            dbContext.Boxes.Remove(toDelete);
+            dbContext.SaveChanges();
         }
     }
 }

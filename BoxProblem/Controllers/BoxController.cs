@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,11 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 using BoxProblem.Data;
 using BoxProblem.Services;
 
-namespace BoxProblem.Controllers
+namespace BoxProblem. Controllers
 {
     public class BoxController : Controller
     {
-        private BoxService service;
+
+private BoxService service;
 
         public BoxController(ApplicationDbContext context)
         {
@@ -64,6 +65,21 @@ namespace BoxProblem.Controllers
                 return RedirectToAction("Index");
             }
             return View(box);
+        }
+   
+        public ActionResult Delete(int id)
+        {
+            BoxInventory box = service.GetBoxById(id);
+            return View(box);
+        }
+        // POST: Students/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            BoxInventory box = service.GetBoxById(id);
+            service.Delete(box);
+            return RedirectToAction("Index");
         }
     }
 }
