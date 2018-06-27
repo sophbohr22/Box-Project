@@ -78,7 +78,11 @@ input {
     border-width: thin;
 }
 
-
+marquee {
+    color: #F5F5F5;
+    font-family: Arial;
+    font-size: 25px;
+}
 
 
 
