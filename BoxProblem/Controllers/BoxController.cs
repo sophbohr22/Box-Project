@@ -1,5 +1,17 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using BoxProblem.Data;
+using BoxProblem.Services;
 
-        private BoxService service;
+namespace BoxProblem. Controllers
+{
+    public class BoxController : Controller
+    {
+
+private BoxService service;
 
         public BoxController(ApplicationDbContext context)
         {
@@ -17,6 +29,7 @@
         public ActionResult Create()
         {
             return View();
+        }
 
         // POST: Employees/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -59,3 +72,5 @@
             BoxInventory box = service.GetBoxById(id);
             return View(box);
         }
+}
+}
