@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BoxProblem.Controllers
 {
-    public class MainController : Controller
+    public class BoxController : Controller
     {
         public IActionResult Index()
         {
