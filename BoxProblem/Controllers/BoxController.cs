@@ -46,10 +46,23 @@ namespace BoxProblem.Controllers
             return View(box);
         }
 
+
        
         public ActionResult Edit(int id)
         {
             BoxInventory box = service.GetBoxById(id);
+            return View(box);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(BoxInventory box)
+        {
+            if (ModelState.IsValid)
+            {
+                service.SaveEdits(box);
+                return RedirectToAction("Index");
+            }
             return View(box);
         }
     }
