@@ -72,5 +72,14 @@ private BoxService service;
             BoxInventory box = service.GetBoxById(id);
             return View(box);
         }
-}
+        // POST: Students/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            BoxInventory box = service.GetBoxById(id);
+            service.Delete(box);
+            return RedirectToAction("Index");
+        }
+    }
 }

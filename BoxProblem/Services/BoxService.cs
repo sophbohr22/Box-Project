@@ -30,9 +30,9 @@ namespace BoxProblem.Services
         {
             repository.SaveEdits(toSave);
         }
-        public void DeleteBox(BoxInventory toDelete)
+        public void Delete(BoxInventory toDelete)
         {
-            repository.DeleteBox(toDelete);
+            repository.Delete(toDelete);
         }
     }
 }
