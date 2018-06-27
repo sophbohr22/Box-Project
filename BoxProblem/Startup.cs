@@ -42,7 +42,7 @@ namespace BoxProblem
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Box/Error");
             }
 
             app.UseStaticFiles();
@@ -53,7 +53,7 @@ namespace BoxProblem
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Box}/{action=Index}/{id?}");
             });
         }
     }
