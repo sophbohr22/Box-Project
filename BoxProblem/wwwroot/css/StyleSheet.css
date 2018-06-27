@@ -23,37 +23,49 @@ a {
     color: #4ABDAC;
 }
 
-btn btn-nav {
-    color: #F5F5F5;
-    background-color: #4ABDAC;
-    border-color: #F5F5F5;
-}
-
-btn btn-nav:hover {
-    color: #4ABDAC;
-    background-color: #F5F5F5;
-    border-color: #4ABDAC;
-}
-
-btn btn-delete {
+#createButton {
     color: #F5F5F5;
     background-color: #FC4A1A;
     border-color: #F5F5F5;
 }
 
-btn btn-delete:hover {
+#createButton:hover {
     color: #FC4A1A;
     background-color: #F5F5F5;
     border-color: #FC4A1A;
 }
 
-btn btn-secondary {
+.btn btn-nav {
+    color: #F5F5F5;
+    background-color: #4ABDAC;
+    border-color: #F5F5F5;
+}
+
+.btn btn-nav:hover {
+    color: #4ABDAC;
+    background-color: #F5F5F5;
+    border-color: #4ABDAC;
+}
+
+.btn btn-prim {
+    color: #F5F5F5;
+    background-color: #FC4A1A;
+    border-color: #F5F5F5;
+}
+
+.btn btn-prim:hover {
+    color: #FC4A1A;
+    background-color: #F5F5F5;
+    border-color: #FC4A1A;
+}
+
+.btn btn-secondary {
     color: #F5F5F5;
     background-color: #FEC830;
     border-color: #F5F5F5;
 }
 
-btn btn-secondary:hover {
+.btn btn-secondary:hover {
     color: #FEC830;
     background-color: #F5F5F5;
     border-color: #FEC830;
@@ -65,6 +77,7 @@ input {
     border-color: #4ABDAC;
     border-width: thin;
 }
+
 
 
 

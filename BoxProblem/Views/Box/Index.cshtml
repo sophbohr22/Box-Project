@@ -1,45 +1,67 @@
 ﻿@model IEnumerable<BoxProblem.Data.BoxInventory>
-    @{
+@{
     ViewBag.Title = "Index";
-    }
+}
+<head>
     <link href="~/bootstrap.css" rel="stylesheet" />
     <link href="~/css/StyleSheet.css" rel="stylesheet" />
+</head>
 
-    <h2>Index</h2>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <div>
-        <form action="~/Employees/Filtered" method="post">
-            <input name="yearsWorked" />
-            <input type="submit" name="submit" />
-        </form>
-    </div>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Weight)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Volume)
-            </th>
-            <th></th>
-        </tr>
-        @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CanHoldLiquid)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cost)
-            </td>
-            <td>
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Id })
-            </td>
-        </tr>
-        }
+<h1>Box Inventory</h1>
+<div>
+    @Html.ActionLink("Create", "Create", "Box", null, new { @id = "createButton" })
+</div>
 
-    </table>
+<div>
+    <form action="~/Boxes/Filtered" method="post">
+        <input name="yearsWorked" />
+        <input type="submit" name="submit" />
+    </form>
+</div>
+
+<table class="table">
+    <tr style="color: #4ABDAC">
+        <th>
+            Weight
+        </th>
+        <th>
+            Volume
+        </th>
+        <th>
+            Number in Inventory
+        </th>
+        <th>
+            Can Hold Liquid
+        </th>
+        <th>
+            Cost
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Volume)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InventoryCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CanHoldLiquid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cost)
+        </td>
+
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+        </td>
+    </tr>
+    }
+</table>
