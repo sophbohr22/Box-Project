@@ -68,8 +68,6 @@ private BoxService service;
             return View(box);
         }
 
-
-       
         public ActionResult Edit(int id)
         {
             BoxInventory box = service.GetBoxById(id);
