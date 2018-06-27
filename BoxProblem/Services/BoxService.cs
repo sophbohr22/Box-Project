@@ -18,10 +18,17 @@ namespace BoxProblem.Services
         {
             return repository.GetAllBoxes();
         }
-
+        public BoxInventory GetBoxById(int id)
+        {
+            return repository.GetBoxById(id);
+        }
         public void AddBox(BoxInventory toAdd)
         {
             repository.AddBox(toAdd);
+        }
+        public void SaveEdits(BoxInventory toSave)
+        {
+            repository.SaveEdits(toSave);
         }
     }
 }
