@@ -20,9 +20,30 @@ private BoxService service;
 
 
         // GET: Employees
-        public ActionResult Index()
+        public ActionResult Index(String searchBy, int search)
         {
-            return View(service.GetAllBoxes());
+            if (searchBy == "Cost"){
+                List<BoxInventory> allBoxes = service.GetAllBoxes();
+                return View(allBoxes.Where(x => (x.Cost == search || search == 0)).ToList());
+            }else{
+                if (searchBy == "Weight")
+                {
+                    List<BoxInventory> allBoxes = service.GetAllBoxes();
+                    return View(allBoxes.Where(x => (x.Weight == search || search == 0)).ToList());
+                }
+                else
+                {
+                    if (searchBy == "Volume")
+                    {
+                        List<BoxInventory> allBoxes = service.GetAllBoxes();
+                        return View(allBoxes.Where(x => (x.Volume == search || search == 0)).ToList());
+                    }
+                    else
+                    {
+                        return View(service.GetAllBoxes());
+                    }
+                }
+            }
         }
 
         // GET: Employees/Create
