@@ -9,7 +9,7 @@
 
 <h1>Box Inventory</h1>
 <div>
-    @Html.ActionLink("Create", "Create", "Box", null, new { @id = "createButton" })
+    @Html.ActionLink("Create", "Create", "Box", null, new { @class = "btn", @id = "alertButton" })
 </div>
     <b>Search By:</b>
 @using (Html.BeginForm("Index", "Box", FormMethod.Get))
