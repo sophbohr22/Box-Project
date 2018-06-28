@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<BoxProblem.Data.BoxInventory>
 @{
     ViewBag.Title = "Index";
-}
+    }
 <head>
     <link href="~/bootstrap.css" rel="stylesheet" />
     <link href="~/css/StyleSheet.css" rel="stylesheet" />
@@ -11,14 +11,19 @@
 <div>
     @Html.ActionLink("Create", "Create", "Box", null, new { @class = "btn", @id = "alertButton" })
 </div>
-
-<div>
-    <form action="~/Boxes/Filtered" method="post">
-        <input name="yearsWorked" />
-        <input type="submit" name="submit" />
-    </form>
-</div>
-
+    <b>Search By:</b>
+@using (Html.BeginForm("Index", "Box", FormMethod.Get))
+{
+    @Html.RadioButton("searchBy", "All", true) <text> All </text>
+    @Html.RadioButton("searchBy", "Cost", true) <text> Cost </text>
+    @Html.RadioButton("searchBy", "Weight", true) <text> Weight </text>
+    @Html.RadioButton("searchBy", "Volume", true) <text> Volume </text>
+    @Html.RadioButton("searchBy", "InventoryCount", true) <text> Number in Inventory </text>
+    @Html.RadioButton("searchBy", "hasLiquid", true) <text> Can Hold Liquid </text>
+    @Html.RadioButton("searchBy", "noLiquid", true) <text> Can Not Hold Liquid </text>
+    <br />
+    <input type = "number" name = "search" step="any"/> <input type="submit" value="Search" />
+}
 <table class="table">
     <tr style="color: #4ABDAC">
         <th>

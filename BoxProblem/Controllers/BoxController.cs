@@ -20,9 +20,34 @@ private BoxService service;
 
 
         // GET: Employees
-        public ActionResult Index()
+        public ActionResult Index(String searchBy, int search)
         {
-            return View(service.GetAllBoxes());
+            List<BoxInventory> allBoxes = service.GetAllBoxes();
+            int error = 1;
+            if (!(searchBy == null))
+            {
+                switch (searchBy)
+                {
+                    case "All":
+                        return View(allBoxes);
+                    case "Cost":
+                        return View(allBoxes.Where(x => (Math.Abs(x.Cost - Math.Abs(search)) <= error)).ToList());
+                    case "Weight":
+                        return View(allBoxes.Where(x => (x.Weight == (int)search)).ToList());
+                    case "Volume":
+                        return View(allBoxes.Where(x => (x.Volume == (int)search)).ToList());
+                    case "InventoryCount":
+                        return View(allBoxes.Where(x => (x.InventoryCount == (int)search)).ToList());
+                    case "hasLiquid":
+                        return View(allBoxes.Where(x => (x.CanHoldLiquid == true)).ToList());
+                    case "noLiquid":
+                        return View(allBoxes.Where(x => (x.CanHoldLiquid == false)).ToList());
+                    default:
+                        return View(allBoxes);
+                }
+            }else{
+                return View(allBoxes);
+            }
         }
 
         // GET: Employees/Create
