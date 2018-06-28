@@ -21,16 +21,16 @@
     <p>@Html.RadioButton("searchBy", "All", true) Show All</p>
     
     <p>
-        @Html.RadioButton("searchBy", "Cost", true) Cost
-        @Html.RadioButton("searchBy", "Weight", true) Weight
-        @Html.RadioButton("searchBy", "Volume", true) Volume
+        @Html.RadioButton("searchBy", "Cost", false) Cost
+        @Html.RadioButton("searchBy", "Weight", false) Weight
+        @Html.RadioButton("searchBy", "Volume", false) Volume
     </p>
     <p>
-        @Html.RadioButton("searchBy", "InventoryCount", true) Number in Inventory
+        @Html.RadioButton("searchBy", "InventoryCount", false) Number in Inventory
     </p>
     <p>
-        @Html.RadioButton("searchBy", "hasLiquid", true) Can Hold Liquid
-        @Html.RadioButton("searchBy", "noLiquid", true) Cannot Hold Liquid
+        @Html.RadioButton("searchBy", "hasLiquid", false) Can Hold Liquid
+        @Html.RadioButton("searchBy", "noLiquid", false) Cannot Hold Liquid
     </p>
 
     <div class="row">
