@@ -7,35 +7,61 @@
 
 <h2>Delete</h2>
 <h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Student</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt class="inputLabel">
-            Weight
-        </dt>
-
-        <dd class="inputLabel">
-            @Html.DisplayFor(model => model.Weight)
-        </dd>
-
-        <dt>
-            Volume 
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Volume)
-        </dd>
-    </dl>
 
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <dl class="dl-horizontal">
+            <dt class="deleteLabels">
+                Weight
+            </dt>
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <dd>
+                @Html.DisplayFor(model => model.Weight)
+            </dd>
+
+            <dt class="deleteLabels">
+                Volume
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Volume)
+            </dd>
+            <dt class="deleteLabels">
+                Inventory Count
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.InventoryCount)
+            </dd>
+            <dt class="deleteLabels">
+                Can Hold Liquid
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CanHoldLiquid)
+            </dd>
+            <dt class="deleteLabels">
+                Cost
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Cost)
+            </dd>
+        </dl>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Delete" class="btn" id="alertButton" />
+            </div>
         </div>
-    }
-</div>
 
+    </div>
+
+
+    }
+
+<div>
+    @Html.ActionLink("Back to List", "Index", "Box", null, new { @class = "btn", @id = "navButton" })
+
+</div>
