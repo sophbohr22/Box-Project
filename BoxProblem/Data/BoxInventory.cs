@@ -10,15 +10,20 @@ namespace BoxProblem.Data
     { 
         [Key]
         public int Id { get; set; }
-
+        
+        [Range(0,Int32.MaxValue)]
         public int Weight { get; set; }
 
+        [Range(0,Int32.MaxValue)]
         public int Volume { get; set; }
 
         public bool CanHoldLiquid { get; set; }
 
+        [Range(0.0,Double.MaxValue)]
+        [DataType(DataType.Currency)]
         public double Cost { get; set; }
 
+        [Range(0,Int32.MaxValue)]
         public int InventoryCount { get; set; }
 
         public DateTime CreatedAt { get; set; }
