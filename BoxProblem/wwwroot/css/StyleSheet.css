@@ -2,11 +2,14 @@
     color: #4ABDAC;
     font-family: Arial;
     font-weight: bold;
+    padding-top: 25px;
 }
 
 h2 {
     color: #FC4A1A;
     font-family: Arial;
+    font-weight: bold;
+    padding-top: 25px;
 }
 
 h3 {
@@ -23,37 +26,64 @@ a {
     color: #4ABDAC;
 }
 
-btn btn-nav {
+#alertButton {
+    color: #F5F5F5;
+    background-color: #FC4A1A;
+    border-color: #F5F5F5;
+    margin-bottom: 15px;
+}
+
+#alertButton:hover {
+    color: #FC4A1A;
+    background-color: #F5F5F5;
+    border-color: #FC4A1A;
+    margin-bottom: 15px;
+}
+
+
+#navButton {
     color: #F5F5F5;
     background-color: #4ABDAC;
     border-color: #F5F5F5;
 }
 
-btn btn-nav:hover {
+#navButton:hover {
     color: #4ABDAC;
     background-color: #F5F5F5;
     border-color: #4ABDAC;
 }
 
-btn btn-delete {
+.btn btn-nav {
+    color: #F5F5F5;
+    background-color: #4ABDAC;
+    border-color: #F5F5F5;
+}
+
+.btn btn-nav:hover {
+    color: #4ABDAC;
+    background-color: #F5F5F5;
+    border-color: #4ABDAC;
+}
+
+.btn btn-prim {
     color: #F5F5F5;
     background-color: #FC4A1A;
     border-color: #F5F5F5;
 }
 
-btn btn-delete:hover {
+.btn btn-prim:hover {
     color: #FC4A1A;
     background-color: #F5F5F5;
     border-color: #FC4A1A;
 }
 
-btn btn-secondary {
+.btn btn-secondary {
     color: #F5F5F5;
     background-color: #FEC830;
     border-color: #F5F5F5;
 }
 
-btn btn-secondary:hover {
+.btn btn-secondary:hover {
     color: #FEC830;
     background-color: #F5F5F5;
     border-color: #FEC830;
@@ -66,6 +96,19 @@ input {
     border-width: thin;
 }
 
+marquee {
+    color: #F5F5F5;
+    font-family: Arial;
+}
 
+.inputLabel {
+    color: #4ABDAC;
+    font-weight: bold;
+    text-align: left !important;
+}
 
+.deleteLabels {
+    color: #4ABDAC;
+    font-weight: bold; 
+}
 
