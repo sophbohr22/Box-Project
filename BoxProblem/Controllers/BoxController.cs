@@ -20,10 +20,10 @@ private BoxService service;
 
 
         // GET: Employees
-        public ActionResult Index(String searchBy, int search)
+        public ActionResult Index(String searchBy,double search)
         {
             List<BoxInventory> allBoxes = service.GetAllBoxes();
-            int error = 1;
+            double error = 1.0;
             if (!(searchBy == null))
             {
                 switch (searchBy)
@@ -31,7 +31,7 @@ private BoxService service;
                     case "All":
                         return View(allBoxes);
                     case "Cost":
-                        return View(allBoxes.Where(x => (Math.Abs(x.Cost - Math.Abs(search)) <= error)).ToList());
+                        return View(allBoxes.Where(x => (Math.Abs((double)x.Cost - Math.Abs(search)) < error)).ToList());
                     case "Weight":
                         return View(allBoxes.Where(x => (x.Weight == (int)search)).ToList());
                     case "Volume":
