@@ -53,6 +53,24 @@ a {
     border-color: #4ABDAC;
 }
 
+#searchButton {
+    color: #F5F5F5;
+    background-color: #4ABDAC;
+    border-color: #F5F5F5;
+}
+
+#searchButton:hover {
+    color: #4ABDAC;
+    background-color: #F5F5F5;
+    border-color: #4ABDAC;
+}
+
+#searchBox {
+    text-align: left;
+    border-color: #4ABDAC;
+    border-width: thin;
+}
+
 .btn btn-nav {
     color: #F5F5F5;
     background-color: #4ABDAC;
@@ -89,12 +107,13 @@ a {
     border-color: #FEC830;
 }
 
-input {
+/*input {
     color: #4ABDAC;
     background-color: #F5F5F5;
     border-color: #4ABDAC;
     border-width: thin;
 }
+    */
 
 marquee {
     color: #F5F5F5;
