@@ -26,6 +26,7 @@ namespace BoxProblem.Data
         [Range(0,Int32.MaxValue)]
         public int InventoryCount { get; set; }
 
+        [DataType(DataType.Date)]
         public DateTime CreatedAt { get; set; }
     }
 }
