@@ -2,16 +2,20 @@
     color: #4ABDAC;
     font-family: Arial;
     font-weight: bold;
+    padding-top: 25px;
 }
 
 h2 {
     color: #FC4A1A;
     font-family: Arial;
+    font-weight: bold;
+    padding-top: 25px;
 }
 
 h3 {
     color: #FEC830;
     font-family: Arial;
+    padding-top: 25px;
 }
 
 p {
@@ -81,8 +85,11 @@ input {
 marquee {
     color: #F5F5F5;
     font-family: Arial;
-    font-size: 25px;
 }
 
-
+.inputLabel {
+    color: #4ABDAC;
+    font-weight: bold;
+    text-align: left !important;
+}
 
