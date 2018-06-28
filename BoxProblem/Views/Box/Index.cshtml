@@ -59,25 +59,31 @@
         <th>
             Cost
         </th>
+        <th>
+            Date Recieved
+        </th>
     </tr>
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Weight)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Volume)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.InventoryCount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CanHoldLiquid)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cost)
-            </td>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Volume)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InventoryCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CanHoldLiquid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedAt)
+        </td>
 
             <td>
                 @Html.ActionLink("Delete", "Delete", new { id = item.Id })
