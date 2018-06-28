@@ -2,49 +2,6 @@
 @{
     ViewBag.Title = "Index";
     }
-    <link href="~/bootstrap.css" rel="stylesheet" />
-    <link href="~/css/StyleSheet.css" rel="stylesheet" />
-
-    <h2>Index</h2>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <div>
-        <form action="~/Employees/Filtered" method="post">
-            <input name="yearsWorked" />
-            <input type="submit" name="submit" />
-        </form>
-    </div>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Weight)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Volume)
-            </th>
-            <th></th>
-        </tr>
-        @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CanHoldLiquid)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cost)
-            </td>
-            <td>
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Id })
-            </td>
-        </tr>
-        }
-
-    </table>
-
-}
 <head>
     <link href="~/bootstrap.css" rel="stylesheet" />
     <link href="~/css/StyleSheet.css" rel="stylesheet" />
@@ -54,14 +11,18 @@
 <div>
     @Html.ActionLink("Create", "Create", "Box", null, new { @id = "createButton" })
 </div>
+    <b>Search By:</b>
 @using (Html.BeginForm("Index", "Box", FormMethod.Get))
 {
-    <b>Search By:</b>
+    @Html.RadioButton("searchBy", "All", true) <text> All </text>
     @Html.RadioButton("searchBy", "Cost", true) <text> Cost </text>
     @Html.RadioButton("searchBy", "Weight", true) <text> Weight </text>
     @Html.RadioButton("searchBy", "Volume", true) <text> Volume </text>
+    @Html.RadioButton("searchBy", "InventoryCount", true) <text> Number in Inventory </text>
+    @Html.RadioButton("searchBy", "hasLiquid", true) <text> Can Hold Liquid </text>
+    @Html.RadioButton("searchBy", "noLiquid", true) <text> Can Not Hold Liquid </text>
     <br />
-    <input type = "number" name = "search"/> <input type="submit" value="Search" />
+    <input type = "number" name = "search" step="any"/> <input type="submit" value="Search" />
 }
 <table class="table">
     <tr style="color: #4ABDAC">

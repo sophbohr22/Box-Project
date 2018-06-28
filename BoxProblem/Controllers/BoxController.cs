@@ -22,27 +22,39 @@ private BoxService service;
         // GET: Employees
         public ActionResult Index(String searchBy, int search)
         {
-            if (searchBy == "Cost"){
-                List<BoxInventory> allBoxes = service.GetAllBoxes();
-                return View(allBoxes.Where(x => (x.Cost == search || search == 0)).ToList());
+            List<BoxInventory> allBoxes = service.GetAllBoxes();
+            int error = 1;
+            if (!(searchBy == null))
+            {
+                switch (searchBy)
+                {
+                    case "All":
+                        return View(allBoxes);
+                        break;
+                    case "Cost":
+                        return View(allBoxes.Where(x => (Math.Abs(x.Cost - Math.Abs(search)) <= error)).ToList());
+                        break;
+                    case "Weight":
+                        return View(allBoxes.Where(x => (x.Weight == (int)search)).ToList());
+                        break;
+                    case "Volume":
+                        return View(allBoxes.Where(x => (x.Volume == (int)search)).ToList());
+                        break;
+                    case "InventoryCount":
+                        return View(allBoxes.Where(x => (x.InventoryCount == (int)search)).ToList());
+                        break;
+                    case "hasLiquid":
+                        return View(allBoxes.Where(x => (x.CanHoldLiquid == true)).ToList());
+                        break;
+                    case "noLiquid":
+                        return View(allBoxes.Where(x => (x.CanHoldLiquid == false)).ToList());
+                        break;
+                    default:
+                        return View(allBoxes);
+                        break;
+                }
             }else{
-                if (searchBy == "Weight")
-                {
-                    List<BoxInventory> allBoxes = service.GetAllBoxes();
-                    return View(allBoxes.Where(x => (x.Weight == search || search == 0)).ToList());
-                }
-                else
-                {
-                    if (searchBy == "Volume")
-                    {
-                        List<BoxInventory> allBoxes = service.GetAllBoxes();
-                        return View(allBoxes.Where(x => (x.Volume == search || search == 0)).ToList());
-                    }
-                    else
-                    {
-                        return View(service.GetAllBoxes());
-                    }
-                }
+                return View(allBoxes);
             }
         }
 
