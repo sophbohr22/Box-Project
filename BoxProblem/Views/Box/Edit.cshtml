@@ -40,7 +40,7 @@
             Inventory Count
         </div>
         <div class="col-md-10">
-            @Html.EditorFor(model => model.InventoryCount, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.InventoryCount, new { htmlAttributes = new { @class = "form-control",  @placeholder = "0" } })
             @Html.ValidationMessageFor(model => model.InventoryCount, "", new { @class = "text-danger" })
         </div>
     </div>

@@ -18,7 +18,7 @@
             Weight
         </div>
         <div class="col-md-10">
-            @Html.EditorFor(model => model.Weight, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.Weight, new { htmlAttributes = new { @class = "form-control",  @placeholder = "0" } })
             @Html.ValidationMessageFor(model => model.Weight, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -28,7 +28,7 @@
             Volume
         </div>
         <div class="col-md-10">
-            @Html.EditorFor(model => model.Volume, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.Volume, new { htmlAttributes = new { @class = "form-control",  @placeholder = "0" } })
             @Html.ValidationMessageFor(model => model.Volume, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -38,7 +38,7 @@
             Inventory Count
         </div>
         <div class="col-md-10">
-            @Html.EditorFor(model => model.InventoryCount, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.InventoryCount, new { htmlAttributes = new { @class = "form-control",  @placeholder = "0" } })
             @Html.ValidationMessageFor(model => model.InventoryCount, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -58,7 +58,7 @@
             Cost
         </div>
         <div class="col-md-10">
-            @Html.EditorFor(model => model.Cost, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.Cost, new { htmlAttributes = new { @class = "form-control",  @placeholder = "0.00" } })
             @Html.ValidationMessageFor(model => model.Cost, "", new { @class = "text-danger" })
         </div>
     </div>
