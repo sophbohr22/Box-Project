@@ -30,14 +30,15 @@ a {
     color: #F5F5F5;
     background-color: #FC4A1A;
     border-color: #F5F5F5;
+    margin-bottom: 15px;
 }
 
 #alertButton:hover {
     color: #FC4A1A;
     background-color: #F5F5F5;
     border-color: #FC4A1A;
+    margin-bottom: 15px;
 }
-
 
 
 #navButton {

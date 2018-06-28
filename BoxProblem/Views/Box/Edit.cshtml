@@ -67,15 +67,14 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn" id="alertButton"/>
+            <input type="submit" value="Save" class="btn" id="alertButton" />
+            <div>
+                @Html.ActionLink("Back to List", "Index", "Box", null, new { @class = "btn", @id = "navButton" })
+            </div>
         </div>
     </div>
-</div>
+    </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index", "Box", null, new { @class = "btn", @id = "navButton" })
-</div>
 
 <!--
  public int Id { get; set; }
