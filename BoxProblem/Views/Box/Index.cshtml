@@ -7,25 +7,42 @@
     <link href="~/css/StyleSheet.css" rel="stylesheet" />
 </head>
 
-<div style="display:inline">
-    <h1>Box Inventory</h1>
-    @Html.ActionLink("Create", "Create", "Box", null, new { @class = "btn", @id = "alertButton" })
+<div>
+    <h1>Box Inventory System</h1>
 </div>
-<b style="color:#4ABDAC">Search By:</b>
+
+<div style="background-color:#FC4A1A; width:100%; height:1.5px; margin-bottom:8px">
+    <p></p>
+</div>
+
+<b style="color:#4ABDAC">Search Boxes By:</b>
 @using (Html.BeginForm("Index", "Box", FormMethod.Get))
 {
-    @Html.RadioButton("searchBy", "All", true) <text> Show All </text>
-    @Html.RadioButton("searchBy", "Cost", true) <text> Cost </text>
-    @Html.RadioButton("searchBy", "Weight", true) <text> Weight </text>
-    @Html.RadioButton("searchBy", "Volume", true) <text> Volume </text>
-    @Html.RadioButton("searchBy", "InventoryCount", true) <text> Number in Inventory </text>
-    @Html.RadioButton("searchBy", "hasLiquid", true) <text> Can Hold Liquid </text>
-    @Html.RadioButton("searchBy", "noLiquid", true) <text> Cannot Hold Liquid </text>
-    <br />
+    <p>@Html.RadioButton("searchBy", "All", true) Show All</p>
+    
+    <p>
+        @Html.RadioButton("searchBy", "Cost", true) Cost
+        @Html.RadioButton("searchBy", "Weight", true) Weight
+        @Html.RadioButton("searchBy", "Volume", true) Volume
+    </p>
+    <p>
+        @Html.RadioButton("searchBy", "InventoryCount", true) Number in Inventory
+    </p>
+    <p>
+        @Html.RadioButton("searchBy", "hasLiquid", true) Can Hold Liquid
+        @Html.RadioButton("searchBy", "noLiquid", true) Cannot Hold Liquid
+    </p>
 
-    <input id="searchBox" class="btn" type="number" name="search" step="any" /> <input type="submit" value="Search" class="btn" id="searchButton" />
+    <div class="row">
+        <div class="col-md-6">
+            <input id="searchBox" class="btn" type="number" name="search" step="any" /> <input type="submit" value="Search" class="btn" id="searchButton" />
+        </div>
+        <div class="col-md-6" style="text-align:right">
+            @Html.ActionLink("New Box Entry", "Create", "Box", null, new { @class = "btn", @id = "alertButton" })
+        </div>
+    </div>
 }
-<table class="table" style="margin-top:26px">
+<table class="table" style="margin-top:5px">
     <tr style="color: #4ABDAC">
         <th>
             Weight
