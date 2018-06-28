@@ -39,6 +39,18 @@ a {
     border-color: #FC4A1A;
 }
 
+#editButton {
+    color: #F5F5F5;
+    background-color: #FC4A1A;
+    border-color: #F5F5F5;
+}
+
+#editButton:hover {
+    color: #FC4A1A;
+    background-color: #F5F5F5;
+    border-color: #FC4A1A;
+}
+
 #navButton {
     color: #F5F5F5;
     background-color: #4ABDAC;
