@@ -30,28 +30,20 @@ private BoxService service;
                 {
                     case "All":
                         return View(allBoxes);
-                        break;
                     case "Cost":
                         return View(allBoxes.Where(x => (Math.Abs(x.Cost - Math.Abs(search)) <= error)).ToList());
-                        break;
                     case "Weight":
                         return View(allBoxes.Where(x => (x.Weight == (int)search)).ToList());
-                        break;
                     case "Volume":
                         return View(allBoxes.Where(x => (x.Volume == (int)search)).ToList());
-                        break;
                     case "InventoryCount":
                         return View(allBoxes.Where(x => (x.InventoryCount == (int)search)).ToList());
-                        break;
                     case "hasLiquid":
                         return View(allBoxes.Where(x => (x.CanHoldLiquid == true)).ToList());
-                        break;
                     case "noLiquid":
                         return View(allBoxes.Where(x => (x.CanHoldLiquid == false)).ToList());
-                        break;
                     default:
                         return View(allBoxes);
-                        break;
                 }
             }else{
                 return View(allBoxes);
